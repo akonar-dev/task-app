@@ -1,13 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import TaskForm from "./components/TaskForm"
+import Tasklist from "./components/Tasklist"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>Task App</div>
+    <div>
+      <header className="text-4xl text-gray-800 font-bold bg-amber-200 p-5 text-center">
+        Task Manager
+      </header>
+      <main>
+        <TaskForm/>
+        <Tasklist/>
+      </main>
+    </div>
   )
 }
 
