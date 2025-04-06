@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This is my full stack application built on MERN stack",
   "main": "server.js",
+  "type":"commonjs",
   "scripts": {
     "dev": "nodemon server.js"
   },
