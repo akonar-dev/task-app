@@ -11,3 +11,6 @@ This is a full stack application built on MERN stack
 9. Setting up the frontend using Vite
 10. Initialised Tailwind CSS
 11. Ready with Boilerplate code
+12. Created the TaskForm component
+13. Improved the design of TaskForm component
+14. Structured the fetch calls using Axios
