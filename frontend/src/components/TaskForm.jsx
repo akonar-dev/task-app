@@ -2,57 +2,74 @@ import React from "react";
 
 const TaskForm = () => {
   return (
-    <form className="border border-black-200 p-5 mx-100 my-5 rounded-xl bg-blue-100 bg-blend-color-burn">
-      <div className="text-center m-5">
-        <label className="p-5" htmlFor="title">
-          Title
+    <form className="max-w-md mx-auto mt-8 p-6 border border-gray-300 rounded-xl bg-white shadow-md">
+  <h2 className="text-xl font-semibold text-center mb-5 text-blue-900">Create Task</h2>
+
+  {/* Title */}
+  <div className="mb-4">
+    <label htmlFor="title" className="block text-gray-700 font-medium mb-1">
+      Title
+    </label>
+    <input
+      type="text"
+      id="title"
+      placeholder="Enter task title"
+      className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-amber-50 text-sm"
+    />
+  </div>
+
+  {/* Description */}
+  <div className="mb-4">
+    <label htmlFor="description" className="block text-gray-700 font-medium mb-1">
+      Description
+    </label>
+    <textarea
+      id="description"
+      rows={3}
+      placeholder="Enter description"
+      className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-amber-50 text-sm"
+    ></textarea>
+  </div>
+
+  {/* Priority */}
+  <div className="mb-4">
+    <h3 className="text-gray-700 font-medium mb-2 text-sm">Priority</h3>
+    <div className="flex gap-4">
+      {["low", "medium", "high"].map((level) => (
+        <label key={level} className="inline-flex items-center gap-1 text-gray-600 capitalize text-sm">
+          <input type="radio" id={level} name="priority" className="accent-blue-600" />
+          {level}
         </label>
-        <input
-          className="border border-b-blue-900 rounded-xl w-2/3 bg-amber-50"
-          type="text"
-          name=""
-          id="title"
-        />
-      </div>
-      <div className="text-center">
-        <label className="p-5" htmlFor="description">
-          Description
-        </label>
-        <textarea
-          className="border border-b-blue-900 rounded-xl w-3/4 bg-amber-50"
-          name=""
-          id="description"
-          cols={20}
-          rows={3}
-        ></textarea>
-      </div>
-      
-      <div className="text-center flex flex-1/3 justify-self-center gap-1">
-        <h2 className="px-10">Priority</h2>
-        <div>
-          <label className="p-5" htmlFor="low">Low</label>
-          <input type="radio" id="low" name="priority"/>
-        </div>
-        <div>
-          <label className="p-5" htmlFor="medium">Medium</label>
-          <input type="radio" id="medium" name="priority"/>
-        </div>
-        <div>
-          <label className="p-5" htmlFor="high">High</label>
-          <input type="radio" id="high" name="priority"/>
-        </div>
-      </div>
-      <div>
-      <div className="border-amber-600 m-2 py-2 text-center">
-      <label className="p-2"htmlFor="task-status">Task Status</label>
-      <select className="border border-black rounded-xl"name="completed" id="task-status">
-          <option value="completed">Not Completed</option>
-          <option value="not completed">Completed</option>
-        </select>
-      </div>
-      
-      </div>
-    </form>
+      ))}
+    </div>
+  </div>
+
+  {/* Task Status */}
+  <div className="mb-5">
+    <label htmlFor="task-status" className="block text-gray-700 font-medium mb-1">
+      Task Status
+    </label>
+    <select
+      id="task-status"
+      name="completed"
+      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+    >
+      <option value="not completed">Not Completed</option>
+      <option value="completed">Completed</option>
+    </select>
+  </div>
+
+  {/* Submit Button */}
+  <div className="text-center">
+    <button
+      type="submit"
+      className="bg-amber-400 hover:bg-amber-500 text-white font-medium px-4 py-2 rounded-lg transition duration-300 text-sm"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+
   );
 };
 
