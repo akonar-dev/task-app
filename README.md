@@ -14,3 +14,5 @@ This is a full stack application built on MERN stack
 12. Created the TaskForm component
 13. Improved the design of TaskForm component
 14. Structured the fetch calls using Axios
+15. Introduced the TaskList and the TaskCard component
+16. Integrated the getAllTasks api
